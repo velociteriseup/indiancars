@@ -3,7 +3,7 @@
 
 This project aims to analyze data related to Indian cars, including their specifications, features, and attributes. The data was acquired from various sources on the internet, cleaned, processed, and visualized using Power BI to gain insights into the Indian car market.
 
-Technologies: https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white
+Technologies: <img src="https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white" />
 ## Project Steps
 
 1. **Data Acquisition:**
