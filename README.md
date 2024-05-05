@@ -1,31 +1,72 @@
-Based on the business outcomes derived from the project, we can draw the following conclusions and insights:
+# Indian Cars Visual Comparison and Analysis
+## Overview
 
-    Maruti and Hyundai:
-        These brands offer a wider range of cars in the lower price segment.
-        Their cars are known for their efficiency in terms of mileage and fuel consumption.
-        This affordability and efficiency make them popular choices among budget-conscious consumers.
+This project aims to analyze data related to Indian cars, including their specifications, features, and attributes. The data was acquired from various sources on the internet, cleaned, processed, and visualized using Power BI to gain insights into the Indian car market.
 
-    Mahindra, Tata, and Others:
-        These brands specialize in SUVs and larger vehicles with more seats.
-        Their cars tend to have powerful engines, making them suitable for off-road driving and towing.
-        While they may be less efficient in terms of mileage, they offer superior performance and capability.
+## Project Steps
 
-    Market Segmentation:
-        The Indian car market is segmented based on consumer preferences, with different brands catering to distinct needs and preferences.
-        Maruti and Hyundai dominate the lower price segment, appealing to cost-conscious consumers looking for efficient and affordable vehicles.
-        Mahindra, Tata, and other brands target consumers looking for larger vehicles with powerful engines and more seating capacity, particularly for family use or off-road adventures.
+1. **Data Acquisition:**
+   - Data was collected from multiple sources on the internet, and Kaggle.
+   - 
+2. **Data Cleaning:**
+   - The acquired data underwent a comprehensive cleaning process to ensure consistency, accuracy, and completeness. This involved handling missing values, removing duplicates, correcting errors, and standardizing data formats.
 
-    Consumer Preferences:
-        Consumers in India have diverse preferences and priorities when it comes to purchasing cars.
-        While some prioritize affordability and fuel efficiency, others prioritize performance, space, and capability.
-        Understanding these preferences is crucial for automakers to develop and market cars that meet the needs of different consumer segments.
+3. **Feature Selection:**
+   - Relevant features and attributes were selected for analysis based on their importance and relevance to the project goals. Features such as mileage, price, displacement, fuel type, and dimensions were considered for inclusion in the analysis.
 
-    Competitive Landscape:
-        Maruti and Hyundai's dominance in the lower price segment poses a challenge for other brands seeking to gain market share in this segment.
-        Mahindra, Tata, and other brands have carved out a niche in the SUV market, leveraging their expertise in producing powerful and rugged vehicles.
+4. **Data Analysis:**
+   - Descriptive statistics, data visualization, and trend analysis were used to identify patterns, trends, and relationships within the data.
 
-    Opportunities for Innovation:
-        There are opportunities for brands to innovate and differentiate themselves by offering more fuel-efficient SUVs or compact SUVs that combine affordability with performance.
-        Brands can also explore alternative fuel options, such as hybrid or electric vehicles, to address growing concerns about environmental sustainability.
+5. **Power BI Report Creation:**
+   - The cleaned and analyzed data was visualized using Power BI to create an interactive and informative report. Various charts, graphs, and dashboards were designed to present key findings, trends, and insights in a visually appealing and intuitive manner.
 
-By leveraging these insights, automakers can develop strategies to better serve the diverse needs of consumers in the Indian car market and stay competitive in an evolving industry landscape.
+6. **Report Interpretation:**
+   - The Power BI report allows users to interactively explore the data, analyze trends, compare different car models, and gain insights into the Indian car market. Users can filter and drill down into the data to uncover valuable insights and make informed decisions.
+
+## Repository
+    Contains the raw and cleaned datasets used in the project.
+    Contains Jupyter notebooks used for data cleaning, analysis, and visualization.
+    Contains the Power BI report file (.pbix) and any supporting documentation.
+    Contains python Flask App to compare cars.
+
+## Usage
+
+1. Clone the repository to your local machine.
+2. Open the Power BI report file (.pbix) using Power BI Desktop.
+3. Interact with the report to explore the data and gain insights into the Indian car market.
+
+# Business Insights from the Project
+
+## Maruti and Hyundai:
+- Offer a wider range of cars in the lower price segment.
+- Known for efficiency in mileage and fuel consumption.
+- Popular among budget-conscious consumers.
+
+## Mahindra, Tata, and Others:
+- Specialize in SUVs and larger vehicles with powerful engines.
+- Suitable for off-road driving and towing.
+- Target consumers seeking performance and capability.
+
+## Market Segmentation:
+- Indian car market segmented based on consumer preferences.
+- Maruti and Hyundai dominate lower price segment.
+- Mahindra, Tata, and others target SUV and larger vehicle market.
+
+## Consumer Preferences:
+- Diverse preferences include affordability, efficiency, performance, and space.
+- Understanding preferences crucial for developing cars meeting consumer needs.
+
+## Competitive Landscape:
+- Maruti and Hyundai dominate lower price segment.
+- Mahindra, Tata, and others carve niche in SUV market.
+
+## Opportunities for Innovation:
+- Potential for fuel-efficient SUVs and compact models.
+- Exploration of alternative fuel options like hybrid or electric vehicles.
+
+These insights guide automakers in better serving diverse consumer needs and staying competitive in the Indian car market.
+
+Thanks!
+
+#Author
+**RISHABH ACHARYA**
