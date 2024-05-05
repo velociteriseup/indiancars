@@ -34,6 +34,7 @@ This project aims to analyze data related to Indian cars, including their specif
 1. Clone the repository to your local machine.
 2. Open the Power BI report file (.pbix) using Power BI Desktop.
 3. Interact with the report to explore the data and gain insights into the Indian car market.
+4. You can also use Python app.py by running command ```python app.py``` after opening terminal in /App folder to compare two cars in your browser visually. 
 
 # Business Insights from the Project
 
