@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Comparison Results</h1>
+    <h2>Car 1: {{ make1 }} {{ model1 }} {{ variant1 }}</h2>
+    <h2>Car 2: {{ make2 }} {{ model2 }} {{ variant2 }}</h2>
+    
+    <canvas id="ex_showroom_price_chart"></canvas>
+    <canvas id="displacement_chart"></canvas>
+    <!-- Add more canvas elements for other charts -->
+
+    <script>
+        // Extract data passed from Flask
+        var exShowroomPriceData = {{ ex_showroom_price_data | tojson }};
+        var displacementData = {{ displacement_data | tojson }};
+        // Add more variables for other chart data
+
+        // Chart configurations
+        var chartConfig = {
+            type: 'bar',
+            data: {
+                labels: ['Car 1', 'Car 2'],
+                datasets: [{
+                    label: 'Ex-Showroom Price',
+                    data: exShowroomPriceData,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        };
+
+        // Create and render charts
+        var exShowroomPriceChart = new Chart(document.getElementById('ex_showroom_price_chart'), chartConfig);
+        var displacementChart = new Chart(document.getElementById('displacement_chart'), chartConfig);
+        // Add more charts for other data
+    </script>
+</body>
+</html>

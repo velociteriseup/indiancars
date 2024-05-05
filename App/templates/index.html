@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Car Details</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Select Cars for Comparison</h1>
+    <form action="/results" method="post" id="carForm">
+        <!-- First Car -->
+        <div>
+            <label for="make1">Make:</label>
+            <select id="make1" name="make1">
+                {% for make in makes %}
+                <option value="{{ make }}">{{ make }}</option>
+                {% endfor %}
+            </select><br><br>
+            
+            <label for="model1">Model:</label>
+            <select id="model1" name="model1">
+                <!-- Options will be dynamically populated based on the selected make -->
+            </select><br><br>
+            
+            <label for="variant1">Variant:</label>
+            <select id="variant1" name="variant1">
+                <!-- Options will be dynamically populated based on the selected model -->
+            </select><br><br>
+        </div>
+
+        <!-- Second Car -->
+        <div>
+            <label for="make2">Make:</label>
+            <select id="make2" name="make2">
+                {% for make in makes %}
+                <option value="{{ make }}">{{ make }}</option>
+                {% endfor %}
+            </select><br><br>
+            
+            <label for="model2">Model:</label>
+            <select id="model2" name="model2">
+                <!-- Options will be dynamically populated based on the selected make -->
+            </select><br><br>
+            
+            <label for="variant2">Variant:</label>
+            <select id="variant2" name="variant2">
+                <!-- Options will be dynamically populated based on the selected model -->
+            </select><br><br>
+        </div>
+
+        <!-- Repeat the above for the third and fourth cars -->
+
+        <input type="submit" value="Compare">
+    </form>
+
+    <script>
+        // Function to dynamically populate model dropdown based on selected make
+        function populateModels(makeId, modelId) {
+            var make = $('#' + makeId).val();
+            $.ajax({
+                url: '/get_models',
+                type: 'POST',
+                data: {make: make},
+                success: function(response) {
+                    var models = $('#' + modelId);
+                    models.empty();
+                    $.each(response.models, function(index, value) {
+                        models.append('<option value="' + value + '">' + value + '</option>');
+                    });
+                }
+            });
+        }
+
+        // Function to dynamically populate variant dropdown based on selected model
+        function populateVariants(makeId, modelId, variantId) {
+            var make = $('#' + makeId).val();
+            var model = $('#' + modelId).val();
+            $.ajax({
+                url: '/get_variants',
+                type: 'POST',
+                data: {make: make, model: model},
+                success: function(response) {
+                    var variants = $('#' + variantId);
+                    variants.empty();
+                    $.each(response.variants, function(index, value) {
+                        variants.append('<option value="' + value + '">' + value + '</option>');
+                    });
+                }
+            });
+        }
+
+        // Attach event listeners for the first car dropdowns
+        $('#make1').change(function() {
+            populateModels('make1', 'model1');
+        });
+        $('#model1').change(function() {
+            populateVariants('make1', 'model1', 'variant1');
+        });
+
+        // Attach event listeners for the second car dropdowns
+        $('#make2').change(function() {
+            populateModels('make2', 'model2');
+        });
+        $('#model2').change(function() {
+            populateVariants('make2', 'model2', 'variant2');
+        });
+
+        // Repeat the above for the third and fourth cars
+    </script>
+</body>
+</html>

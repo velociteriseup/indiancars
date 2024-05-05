@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Add space between charts */
+            margin-bottom: 20px; /* Add margin at the bottom */
+        }
+        .chart {
+            width: 45%; /* Adjust width of each chart */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparison Results</h1>
+    <div class="chart-container">
+        <div class="chart">
+            <canvas id="ex_showroom_price_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="displacement_chart"></canvas>
+        </div>
+        <!-- Add more chart containers for other variables -->
+        <div class="chart">
+            <canvas id="fuel_type_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="arai_certified_mileage_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="fuel_tank_capacity_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="power_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="torque_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="car_type_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="cylinders_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="ground_clearance_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="kerb_weight_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="seating_capacity_chart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="boot_space_chart"></canvas>
+        </div>
+        <!-- Add more chart containers for other variables -->
+    </div>
+    
+<script>
+    // Extract data passed from Flask
+    var exShowroomPriceData = {{ ex_showroom_price_data | tojson }};
+    var displacementData = {{ displacement_data | tojson }};
+    var fuelTypeData = {{ fuel_type_data | tojson }};
+    var araiCertifiedMileageData = {{ arai_certified_mileage_data | tojson }};
+    var fuelTankCapacityData = {{ fuel_tank_capacity_data | tojson }};
+    var powerData = {{ power_data | tojson }};
+    var torqueData = {{ torque_data | tojson }};
+    var carTypeData = {{ car_type_data | tojson }};
+    var cylindersData = {{ cylinders_data | tojson }};
+    var groundClearanceData = {{ ground_clearance_data | tojson }};
+    var kerbWeightData = {{ kerb_weight_data | tojson }};
+    var seatingCapacityData = {{ seating_capacity_data | tojson }};
+    var bootSpaceData = {{ boot_space_data | tojson }};
+    // Add more variables for other chart data
+
+    // Chart configurations
+    var exShowroomPriceConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Ex-Showroom Price',
+            data: exShowroomPriceData,
+            backgroundColor: 'rgba(255, 99, 132, 1)', // Change to opaque color
+            borderColor: 'rgba(255, 99, 132, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+
+var displacementConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Displacement',
+            data: displacementData,
+            backgroundColor: 'rgba(54, 162, 235, 1)', // Change to opaque color
+            borderColor: 'rgba(54, 162, 235, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+
+// Add configurations for other variables
+
+    // Create and render charts
+    var exShowroomPriceChart = new Chart(document.getElementById('ex_showroom_price_chart'), exShowroomPriceConfig);
+    var displacementChart = new Chart(document.getElementById('displacement_chart'), displacementConfig);
+    // Create and render charts for other variables
+    // Fuel Type
+    var fuelTypeConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Fuel Type',
+            data: fuelTypeData,
+            backgroundColor: 'rgba(255, 206, 86, 1)', // Change to opaque color
+            borderColor: 'rgba(255, 206, 86, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var fuelTypeChart = new Chart(document.getElementById('fuel_type_chart'), fuelTypeConfig);
+    // ARAI Certified Mileage
+    var araiCertifiedMileageConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'ARAI Certified Mileage',
+            data: araiCertifiedMileageData,
+            backgroundColor: 'rgba(75, 192, 192, 1)', // Change to opaque color
+            borderColor: 'rgba(75, 192, 192, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var araiCertifiedMileageChart = new Chart(document.getElementById('arai_certified_mileage_chart'), araiCertifiedMileageConfig);
+    // Fuel Tank Capacity
+    var fuelTankCapacityConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Fuel Tank Capacity',
+            data: fuelTankCapacityData,
+            backgroundColor: 'rgba(153, 102, 255, 1)', // Change to opaque color
+            borderColor: 'rgba(153, 102, 255, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var fuelTankCapacityChart = new Chart(document.getElementById('fuel_tank_capacity_chart'), fuelTankCapacityConfig);
+    // Power
+    var powerConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Power',
+            data: powerData,
+            backgroundColor: 'rgba(255, 159, 64, 1)', // Change to opaque color
+            borderColor: 'rgba(255, 159, 64, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var powerChart = new Chart(document.getElementById('power_chart'), powerConfig);
+    // Torque
+    var torqueConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Torque',
+            data: torqueData,
+            backgroundColor: 'rgba(255, 206, 86, 1)', // Change to opaque color
+            borderColor: 'rgba(255, 206, 86, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var torqueChart = new Chart(document.getElementById('torque_chart'), torqueConfig);
+    // Car Type
+    var carTypeConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Car Type',
+            data: carTypeData,
+            backgroundColor: 'rgba(75, 192, 192, 1)', // Change to opaque color
+            borderColor: 'rgba(75, 192, 192, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var carTypeChart = new Chart(document.getElementById('car_type_chart'), carTypeConfig);
+    // Cylinders
+    var cylindersConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Cylinders',
+            data: cylindersData,
+            backgroundColor: 'rgba(54, 162, 235, 1)', // Change to opaque color
+            borderColor: 'rgba(54, 162, 235, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var cylindersChart = new Chart(document.getElementById('cylinders_chart'), cylindersConfig);
+    // Ground Clearance
+    var groundClearanceConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Ground Clearance',
+            data: groundClearanceData,
+            backgroundColor: 'rgba(153, 102, 255, 1)', // Change to opaque color
+            borderColor: 'rgba(153, 102, 255, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var groundClearanceChart = new Chart(document.getElementById('ground_clearance_chart'), groundClearanceConfig);
+    // Kerb Weight
+    var kerbWeightConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Kerb Weight',
+            data: kerbWeightData,
+            backgroundColor: 'rgba(255, 159, 64, 1)', // Change to opaque color
+            borderColor: 'rgba(255, 159, 64, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var kerbWeightChart = new Chart(document.getElementById('kerb_weight_chart'), kerbWeightConfig);
+    // Seating Capacity
+    var seatingCapacityConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Seating Capacity',
+            data: seatingCapacityData,
+            backgroundColor: 'rgba(255, 206, 86, 1)', // Change to opaque color
+            borderColor: 'rgba(255, 206, 86, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var seatingCapacityChart = new Chart(document.getElementById('seating_capacity_chart'), seatingCapacityConfig);
+    // Boot Space
+    var bootSpaceConfig = {
+    type: 'bar',
+    data: {
+        labels: ['{{ make1 }} {{ model1 }} {{ variant1 }}', '{{ make2 }} {{ model2 }} {{ variant2 }}'],
+        datasets: [{
+            label: 'Boot Space',
+            data: bootSpaceData,
+            backgroundColor: 'rgba(75, 192, 192, 1)', // Change to opaque color
+            borderColor: 'rgba(75, 192, 192, 1)', // Change to opaque color
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        barPercentage: 0.8, // Adjust as needed
+        categoryPercentage: 0.5, // Adjust as needed
+        barThickness: 'flex' // Adjust as needed
+    }
+};
+var bootSpaceChart = new Chart(document.getElementById('boot_space_chart'), bootSpaceConfig);
+
+</script>
+
+</body>
+</html>
