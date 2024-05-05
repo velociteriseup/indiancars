@@ -3,6 +3,7 @@
 
 This project aims to analyze data related to Indian cars, including their specifications, features, and attributes. The data was acquired from various sources on the internet, cleaned, processed, and visualized using Power BI to gain insights into the Indian car market.
 
+Technologies: https://user-images.githubusercontent.com/25181517/183423507-c056a6f9-1ba8-4312-a350-19bcbc5a8697.png https://user-images.githubusercontent.com/25181517/183423775-2276e25d-d43d-4e58-890b-edbc88e915f7.png https://user-images.githubusercontent.com/25181517/183914128-3fc88b4a-4ac1-40e6-9443-9a30182379b7.png
 ## Project Steps
 
 1. **Data Acquisition:**
