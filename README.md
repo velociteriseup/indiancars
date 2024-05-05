@@ -5,7 +5,7 @@ This project aims to analyze data related to Indian cars, including their specif
 
 Technologies- Python, Flask, Pandas, HTML/CSS, JavaScript, JSON, NumPy, Matplotlib , Seaborn, Requests, Power BI.
 
-##Screenshots
+## Screenshots
 
 Comparison of All Models by Brand
 ![Screenshot (28)](https://github.com/velociteriseup/indiancars/assets/167065624/e7224eba-b89a-485c-b364-9896473d6d20)
