@@ -40,7 +40,9 @@ Details of Car Model
 ## Repository
    Contains the raw and cleaned datasets used in the project.
    Contains Jupyter notebooks used for data cleaning, analysis, and visualization.
+
    Contains the Power BI report file (.pbix) and any supporting documentation.
+   
    Contains python Flask App to compare cars.
 
 ## Usage
