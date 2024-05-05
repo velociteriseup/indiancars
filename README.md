@@ -2,6 +2,9 @@
 ## Overview
 
 This project aims to analyze data related to Indian cars, including their specifications, features, and attributes. The data was acquired from various sources on the internet, cleaned, processed, and visualized using Power BI to gain insights into the Indian car market.
+
+Technologies- Python, Flask, Pandas, HTML/CSS, JavaScript, JSON, NumPy, Matplotlib , Seaborn, Requests, Power BI.
+
 ## Project Steps
 
 1. **Data Acquisition:**
