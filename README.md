@@ -7,7 +7,7 @@ This project aims to analyze data related to Indian cars, including their specif
 
 1. **Data Acquisition:**
    - Data was collected from multiple sources on the internet, and Kaggle.
-   - 
+     
 2. **Data Cleaning:**
    - The acquired data underwent a comprehensive cleaning process to ensure consistency, accuracy, and completeness. This involved handling missing values, removing duplicates, correcting errors, and standardizing data formats.
 
@@ -24,10 +24,10 @@ This project aims to analyze data related to Indian cars, including their specif
    - The Power BI report allows users to interactively explore the data, analyze trends, compare different car models, and gain insights into the Indian car market. Users can filter and drill down into the data to uncover valuable insights and make informed decisions.
 
 ## Repository
-    Contains the raw and cleaned datasets used in the project.
-    Contains Jupyter notebooks used for data cleaning, analysis, and visualization.
-    Contains the Power BI report file (.pbix) and any supporting documentation.
-    Contains python Flask App to compare cars.
+   Contains the raw and cleaned datasets used in the project.
+   Contains Jupyter notebooks used for data cleaning, analysis, and visualization.
+   Contains the Power BI report file (.pbix) and any supporting documentation.
+   Contains python Flask App to compare cars.
 
 ## Usage
 
