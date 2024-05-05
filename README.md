@@ -39,6 +39,7 @@ Details of Car Model
 
 ## Repository
    Contains the raw and cleaned datasets used in the project.
+   
    Contains Jupyter notebooks used for data cleaning, analysis, and visualization.
 
    Contains the Power BI report file (.pbix) and any supporting documentation.
@@ -85,5 +86,5 @@ These insights guide automakers in better serving diverse consumer needs and sta
 
 Thanks!
 
-#Author
+##Author
 **RISHABH ACHARYA**
